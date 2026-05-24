@@ -1,0 +1,18 @@
+[package]
+name = "oas"
+description = "OpenAI api specification"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+modwire = "*"
+serde = { version = "*", features = ["derive"] }
+serde_json = "*"
+bon = "*"
+derive_more = { version = "*", features = ["full"] }
+url = "*"
+reqwest = { version = "*", features = ["json"] }
+thiserror = "*"
+schemars = "*"
+base64 = "0.22.1"
+infer = "0.19.0"
