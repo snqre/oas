@@ -1,6 +1,6 @@
 use super::*;
 
-pub trait Inference<'a> 
+pub trait Inference<'a>
 where
 	Self: Sized {
 	fn from_oas_provider() -> InferenceRequestBuilder<'a, Self>;
@@ -11,8 +11,3 @@ impl<'a, T> Inference<'a> for T {
 		InferenceRequest::builder()
 	}
 }
-
-
-
-
-
