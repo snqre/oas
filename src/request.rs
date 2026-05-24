@@ -14,10 +14,15 @@ pub struct Request<T = ()> {
 	#[serde(rename = "messages")]
 	#[builder(into)]
 	pub context: Vec<Message>,
+	#[builder(default = 1.0)]
 	pub frequency_penalty: f32,
+	#[builder(default = 1.0)]
 	pub temperature: f32,
+	#[builder(default = 1.0)]
 	pub top_p: f32,
+	#[builder(default = 1.0)]
 	pub presence_penalty: f32,
+	#[builder(default = Verbosity::Medium)]
 	pub verbosity: Verbosity,
 	pub response_format: ResponseFormat<T>
 }

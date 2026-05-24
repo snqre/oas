@@ -17,3 +17,11 @@ pub enum ResponseFormat<T = ()> {
 		configuration: Configuration<T>
 	}
 }
+
+impl<T> ResponseFormat<T> {
+	pub fn from_json_schema(configuration: Configuration<T>) -> Self {
+		Self::JsonSchema {
+			configuration
+		}
+	}
+}
