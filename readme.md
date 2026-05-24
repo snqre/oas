@@ -19,9 +19,9 @@ impl Score {
 			.temperature(2.0)
 			.top_p(1.0)
 			.context([
-				Message::builder().role(Role::System).content(String::from("simulate a football match")).build(),
-				Message::builder().role(Role::System).content(Vec::from([
-					Part::from_text(String::from("make no mistakes")),
+				oas::Message::builder().role(oas::Role::System).content(String::from("simulate a football match")).build(),
+				oas::Message::builder().role(oas::Role::System).content(Vec::from([
+					oas::Part::from_text(String::from("make no mistakes")),
 				]))
 				.build()
 			])
