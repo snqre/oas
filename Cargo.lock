@@ -753,7 +753,7 @@ checksum = "db7268cd704daa19a00fbd5b36a06a78fbc77e9c26a250e81c5e76e92bfc809d"
 
 [[package]]
 name = "oas"
-version = "0.1.1"
+version = "0.2.0"
 dependencies = [
  "base64",
  "bon",
