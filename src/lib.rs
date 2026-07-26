@@ -30,9 +30,11 @@ pub enum Error {
 	#[error("{}", 0)]
 	Url(#[from] url::ParseError),
 	#[error("{}", 0)]
+	Parse(Box<dyn std::error::Error + Send + Sync + 'static>),
+	#[error("{}", 0)]
 	RequestFailed(String),
-	#[error("{}", 0)]
+	#[error("completion empty")]
 	CompletionEmpty,
-	#[error("{}", 0)]
+	#[error("unsupported response content type")]
 	Unsupported
 }
