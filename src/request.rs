@@ -22,7 +22,7 @@ pub struct Request<T = ()> {
 	pub top_p: f32,
 	#[builder(default = 1.0)]
 	pub presence_penalty: f32,
-	#[builder(default = Verbosity::Medium)]
-	pub verbosity: Verbosity,
+	#[serde(skip_serializing_if = "Option::is_none")]
+	pub verbosity: Option<Verbosity>,
 	pub response_format: ResponseFormat<T>
 }

@@ -20,8 +20,7 @@ pub struct InferenceRequest<'a, T> {
     top_p: f32,
     #[builder(default = 1.0)]
     presence_penalty: f32,
-    #[builder(default = Verbosity::Medium)]
-    verbosity: Verbosity,
+    verbosity: Option<Verbosity>,
     #[builder(into)]
 	context: Vec<Message>,
 }
@@ -49,7 +48,7 @@ where
          	.temperature(self.temperature)
 	        .top_p(self.top_p)
 	        .presence_penalty(self.presence_penalty)
-	        .verbosity(self.verbosity)
+	        .maybe_verbosity(self.verbosity)
 	        .context(self.context)
 			.response_format(ResponseFormat::from_json_schema(Configuration::from_schema()?))
     		.build();
